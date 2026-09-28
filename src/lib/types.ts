@@ -3,23 +3,17 @@ interface Student {
   firstName: string;
   lastName: string;
   program: "CPE" | "ISNE";
-  courses?: string[];
+  status: "Active" | "Inactive";
+  enrolledCourses: string[]; // เช่น ["CS101", "CS201"]
 }
 export type { Student };
 
 interface Course {
-  courseId: string;
+  courseCode: string; // เช่น "CPE301"
   courseTitle: string;
-  instructors: string[];
+  instructors?: string[];
 }
 export type { Course };
-
-interface Enrollment {
-  studentId: string;
-  courseId: string;
-  enrolledAt?: string; 
-}
-export type { Enrollment };
 
 interface User {
   username: string;
